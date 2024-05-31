@@ -6,7 +6,6 @@ pipeline {
         //     args '-v /var/run/docker.sock:/var/run/docker.sock'
         // }
         docker {
-            label 'master-label'
             image 'node:14'
         }
     }
