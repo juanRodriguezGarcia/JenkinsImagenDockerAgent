@@ -1,9 +1,13 @@
 pipeline {
     agent {
+        // docker {
+        //     label 'docker-label'
+        //     image 'node:14'
+        //     args '-v /var/run/docker.sock:/var/run/docker.sock'
+        // }
         docker {
             label 'docker-label'
             image 'node:14'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
 
