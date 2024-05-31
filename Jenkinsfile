@@ -6,7 +6,7 @@ pipeline {
         //     args '-v /var/run/docker.sock:/var/run/docker.sock'
         // }
         docker {
-            label 'label-nodo-windows'
+            label 'principal'
             image 'node:14'
         }
     }
