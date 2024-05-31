@@ -14,11 +14,11 @@ pipeline {
  
 	//Checkout: Este paso se asegura de que el código del repositorio esté disponible en el workspace de Jenkins.
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         checkout scm
+        //     }
+        // }
 
         stage('Build') {
             steps {
