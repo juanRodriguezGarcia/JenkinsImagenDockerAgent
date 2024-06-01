@@ -1,7 +1,7 @@
 pipeline {
        // agent { docker 'timbru31/java-node:latest' }
   environment {
-    HOME="."
+    HOME="C:\Jenkins"
   }
     agent {
         docker {
