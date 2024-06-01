@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             image 'timbru31/java-node:latest'
-            args '-v C:\\Jenkins\\directorioAgentes:/opt'
+            args '-v C:/Jenkins/directorioAgentes:/opt'
         }
     }
         
