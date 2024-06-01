@@ -2,6 +2,8 @@ pipeline {
        // agent { docker 'timbru31/java-node:latest' }
   environment {
     HOME="C:/Jenkins"
+    DOCKER_CREDENTIALS = credentials('docker-login-credentials')
+         
   }
     agent {
         docker {
@@ -10,11 +12,7 @@ pipeline {
         }
     }
 
-    environment {
-        DOCKER_CREDENTIALS = credentials('docker-login-credentials')
-    }
 
-       
         
         stages {
             stage('build') {
