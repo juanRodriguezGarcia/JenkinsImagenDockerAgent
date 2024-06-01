@@ -8,6 +8,8 @@ pipeline {
     agent {
         docker {
             image 'openjdk:8-jdk-alpine'
+                  args '-v /c/ProgramData/Jenkins/.jenkins/workspace/ProyectosDemo/TestBuildConDockerImage/:/workspace'
+            reuseNode true
              //args  '-d -t -v C:/Jenkins:/opt -w /opt'
               //args '-v /var/run/docker.sock:/var/run/docker.sock' 
         }
