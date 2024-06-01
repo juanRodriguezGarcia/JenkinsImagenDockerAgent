@@ -1,11 +1,30 @@
+//pipeline {
+//agent { dockerfile true }
+//stages {
+//stage('Test') {
+//steps {
+//sh 'node --version'
+//sh 'svn --version'
+//}
+//}
+//}
+//}
 pipeline {
-    agent { dockerfile true }
+agent any
     stages {
-        stage('Test') {
+        stage('build') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                script {
+						   /* the return value gets caught and saved into the variable MY_CONTAINER */
+						   MY_CONTAINER = bat(script: '@docker run -d -i python:3.10.7-alpine', returnStdout: true).trim()
+							
+							echo "mycontainer_id is ${MY_CONTAINER}"
+						   /* python --version gets executed inside the Container */
+						   bat "docker exec ${MY_CONTAINER} python --version "
+						   /* the Container gets removed */
+						   bat "docker rm -f ${MY_CONTAINER}"
+                        }
+                    }
+                }
             }
         }
-    }
-}
