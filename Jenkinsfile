@@ -13,7 +13,9 @@ pipeline {
 
 	environment {
 		PATH = "C:\\Program Files\\Docker\\Docker\resources\\bin;${env.PATH}"
-		// rest of your environment variables…
+		environment {
+                  HOME="."
+                }
 	}
 	
 	agent { docker 'timbru31/java-node:latest' }
