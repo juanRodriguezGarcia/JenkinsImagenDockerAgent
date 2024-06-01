@@ -9,26 +9,26 @@ agent any
 
 
 
-	stages {		
-        stage('build1') {
-            steps {
-		script {
 
-			docker.withServer('tcp://localhost:2375') {
-				docker.image('stefanscherer/node-windows:10').inside {
-					sh 'node --version'
-				}
-			}
-				
-		}
-                    }
-                }
-            }
 
 	
 	
 	stages {		
         stage('build') {
+
+
+            steps {
+			script {
+	
+				docker.withServer('tcp://localhost:2375') {
+					docker.image('stefanscherer/node-windows:10').inside {
+						sh 'node --version'
+					}
+				}
+					
+			}
+                    }
+		
             steps {
                 script {
 						   /* the return value gets caught and saved into the variable MY_CONTAINER */
