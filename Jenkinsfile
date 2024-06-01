@@ -6,7 +6,7 @@ pipeline {
     agent {
         docker {
             image 'node:14'
-            args '-v ${HOME}:/opt'
+            args '-v C:/Jenkins:/opt'
         }
     }
         
