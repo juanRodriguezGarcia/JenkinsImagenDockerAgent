@@ -17,17 +17,7 @@ agent any
         stage('build') {
 
 
-            steps {
-			script {
-	
-				docker.withServer('tcp://localhost:2375') {
-					docker.image('stefanscherer/node-windows:10').inside {
-						sh 'node --version'
-					}
-				}
-					
-			}
-                    }
+
 		
             steps {
                 script {
