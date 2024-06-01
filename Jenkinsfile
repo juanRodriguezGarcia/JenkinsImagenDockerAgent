@@ -23,8 +23,8 @@ agent any
                 script {
 
 						docker.withServer('tcp://localhost:2375') {
-							docker.image('stefanscherer/node-windows:10').inside {
-								sh 'node --version'
+							docker.image('node:20.11.1-alpine3.19').inside {
+								sh 'npm --version'
 							}
 						}
 
