@@ -5,7 +5,7 @@ pipeline {
   }
     agent {
         docker {
-            image 'timbru31/java-node:latest'
+            image 'node:14'
             args '-v ${HOME}:/opt'
         }
     }
