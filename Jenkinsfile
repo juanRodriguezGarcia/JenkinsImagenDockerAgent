@@ -1,18 +1,33 @@
 pipeline {
 agent any
 //agent { dockerfile true }	 
-    
+
 
 	
-	stages {
-		stage('Example') {
-				docker.withServer('tcp://localhost:2375') {
-					docker.image('stefanscherer/node-windows:10').inside {
-						sh 'node --version'
-					}
+
+
+
+
+
+	stages {		
+        stage('build1') {
+            steps {
+		script {
+
+			docker.withServer('tcp://localhost:2375') {
+				docker.image('stefanscherer/node-windows:10').inside {
+					sh 'node --version'
 				}
 			}
-		
+				
+		}
+                    }
+                }
+            }
+
+	
+	
+	stages {		
         stage('build') {
             steps {
                 script {
