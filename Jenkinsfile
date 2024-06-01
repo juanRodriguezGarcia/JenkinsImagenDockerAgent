@@ -10,7 +10,8 @@ pipeline {
                 steps {
                        script {
                            // Iniciar sesión en Docker dentro del agente Docker
-                              sh 'npm --version'
+                             echo "###################### Antes de compilar ####################" 
+                             sh 'npm --version'
                            }
                             
                        }
