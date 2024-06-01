@@ -8,7 +8,7 @@ pipeline {
     agent {
         docker {
             image 'openjdk:8-jdk-alpine'
-            args '-v C:/Jenkins:/opt -w /opt'
+            args --rm '-v C:/Jenkins:/opt -w /opt'
               //args '-v /var/run/docker.sock:/var/run/docker.sock' 
         }
        //    docker {
