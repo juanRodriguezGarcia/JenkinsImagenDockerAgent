@@ -1,15 +1,17 @@
 pipeline {
-    agent {
+    //agent {
         // docker {
         //     label 'docker-label'
         //     image 'node:14'
         //     args '-v /var/run/docker.sock:/var/run/docker.sock'
         // }
-        docker {
-            label 'label'
-	    image 'timbru31/java-node'
-        }
-    }
+      //  docker {
+        //    label 'label'
+	  //  image 'timbru31/java-node:'
+        //}
+    //}
+
+	agent { docker 'timbru31/java-node:latest' }
  
     // environment {
         // AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
