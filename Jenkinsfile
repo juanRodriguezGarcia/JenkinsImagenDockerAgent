@@ -12,7 +12,7 @@ pipeline {
             //reuseNode true
              //args  '-d -t -v C:/Jenkins:/opt -w /opt'
               //args '-v /var/run/docker.sock:/var/run/docker.sock' 
-        }
+        //}
        //    docker {
        //     label 'doker-label'
        //     image 'openjdk:8-jdk-alpine'
