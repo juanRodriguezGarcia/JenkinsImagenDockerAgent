@@ -1,18 +1,17 @@
 pipeline {
        // agent { docker 'timbru31/java-node:latest' }
-
+  environment {
+    HOME="."
+  }
     agent {
         docker {
             image 'timbru31/java-node:latest'
-            args '-v C:/Jenkins/directorioAgentes:/opt'
+            args '-v ${HOME}:/opt'
         }
     }
         
         stages {
             stage('build') {
-                environment {
-                  HOME="."
-                }
                 steps {
                     sh 'npm --version'
                 }
