@@ -7,6 +7,7 @@ pipeline {
         // }
         docker {
             label 'label'
+	    image 'timbru31/java-node'
         }
     }
  
