@@ -21,6 +21,14 @@ agent any
 		
             steps {
                 script {
+
+						docker.withServer('tcp://localhost:2375') {
+							docker.image('stefanscherer/node-windows:10').inside {
+								sh 'node --version'
+							}
+						}
+
+			
 						   /* the return value gets caught and saved into the variable MY_CONTAINER */
 						   MY_CONTAINER = bat(script: '@docker run -d -i python:3.10.7-alpine', returnStdout: true).trim()
 							
