@@ -1,7 +1,18 @@
 pipeline {
-//agent any
-agent { dockerfile true }	 
-    stages {
+agent any
+//agent { dockerfile true }	 
+    
+
+	
+	stages {
+		stage('Example') {
+				docker.withServer('tcp://localhost:2375') {
+					docker.image('stefanscherer/node-windows:10').inside {
+						sh 'node --version'
+					}
+				}
+			}
+		
         stage('build') {
             steps {
                 script {
