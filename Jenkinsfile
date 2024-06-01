@@ -18,6 +18,18 @@ pipeline {
         // AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
         // S3_BUCKET = 'your-s3-bucket-name'
     // }
+
+
+	stages {
+            stage('build') {
+                environment {
+                  HOME="."
+                }
+                steps {
+                    sh 'mvn --version'
+                }
+           }
+        }
  
 	//Checkout: Este paso se asegura de que el código del repositorio esté disponible en el workspace de Jenkins.
     stages {
@@ -28,16 +40,7 @@ pipeline {
         // }
 
 
-        stages {
-            stage('build') {
-                environment {
-                  HOME="."
-                }
-                steps {
-                    sh 'mvn --version'
-                }
-           }
-        }
+
 	    
         stage('Build') {
             steps {
