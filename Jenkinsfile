@@ -10,15 +10,8 @@ pipeline {
 	  //  image 'timbru31/java-node:'
         //}
     //}
-
-	environment {
-		PATH = "C:\\Program Files\\Docker\\Docker\resources\\bin;${env.PATH}"
-		environment {
-                  HOME="."
-                }
-	}
 	
-	agent { docker 'timbru31/java-node:latest' }
+   agent { docker 'timbru31/java-node:latest' }
  
     // environment {
         // AWS_ACCESS_KEY_ID = credentials('aws-access-key-id')
@@ -34,6 +27,18 @@ pipeline {
         //     }
         // }
 
+
+        stages {
+            stage('build') {
+                environment {
+                  HOME="."
+                }
+                steps {
+                    sh 'mvn --version'
+                }
+           }
+        }
+	    
         stage('Build') {
             steps {
 				echo "##################### Compilando el proyecto ################################"
