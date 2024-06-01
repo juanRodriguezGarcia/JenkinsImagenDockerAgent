@@ -5,8 +5,8 @@ pipeline {
     DOCKER_CREDENTIALS = credentials('docker-login-credentials')
          
   }
-    agent {
-        docker {
+   // agent {
+        //docker {
            // image 'openjdk:8-jdk-alpine'
            //       args '-v /c/ProgramData/Jenkins/.jenkins/workspace/ProyectosDemo/TestBuildConDockerImage/:/workspace'
             //reuseNode true
@@ -17,7 +17,7 @@ pipeline {
        //     label 'doker-label'
        //     image 'openjdk:8-jdk-alpine'
        // }
-    }
+   // }
 
 
         
