@@ -6,15 +6,15 @@ pipeline {
          
   }
     agent {
-        //docker {
-        //    image 'node'
-            //args '-v C:/Jenkins:/opt -w /opt'
-        //      args '-v /var/run/docker.sock:/var/run/docker.sock' 
-        //}
-           docker {
-            label 'doker-label'
-            image 'openjdk:8-jdk-alpine'
+        docker {
+            image 'openjdk:8-jdk-alpine:'
+            args '-v C:/Jenkins:/opt -w /opt'
+              //args '-v /var/run/docker.sock:/var/run/docker.sock' 
         }
+       //    docker {
+       //     label 'doker-label'
+       //     image 'openjdk:8-jdk-alpine'
+       // }
     }
 
 
