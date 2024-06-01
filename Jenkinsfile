@@ -1,24 +1,11 @@
 pipeline {
-
-//agent any
-//environment {
-//HOME="C:/Jenkins"
-//}
-
-    agent {
-        docker { image 'node:20.11.1-alpine3.19' }
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
     }
-  
-        stages {
-            stage('build') {
-                steps {
-                       script {
-                           // Iniciar sesión en Docker dentro del agente Docker
-                             echo "###################### Antes de compilar ####################" 
-                             sh 'npm --version'
-                           }
-                            
-                       }
-                }
-           }
-    }
+}
