@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent label-linux
     // agent {
     //     label 'label-linux'
     // }
