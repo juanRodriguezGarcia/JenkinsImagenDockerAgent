@@ -3,7 +3,7 @@ pipeline {
    // agent any
 		agent {
 		   node {
-		        label 'label-linuxl'
+		        label 'label-linux'
 		        customWorkspace '/home/jenkins/workspace/ProyectosDemo'
 		    }
     		}
