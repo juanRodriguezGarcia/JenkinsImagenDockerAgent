@@ -14,6 +14,28 @@ pipeline {
 
 
     stages {
+
+        stage('Prepare Workspace') {
+            steps {
+                script {
+                    def workspaceDir = "/home/jenkins/agent/workspace/ProyectosDemo"
+                    sh """
+                        if [ ! -d "$workspaceDir" ]; then
+                            mkdir -p "$workspaceDir"
+                        fi
+                        sudo chown -R jenkins:jenkins "$workspaceDir"
+                        sudo chmod -R 755 "$workspaceDir"
+                    """
+                }
+            }
+        }
+
+	stage('Checkout Code') {
+            steps {
+                git url: 'https://github.com/tu-repositorio.git', branch: 'main'
+            }
+        }
+	    
         stage('Build') {
 
             steps {
