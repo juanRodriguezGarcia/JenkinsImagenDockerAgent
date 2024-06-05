@@ -3,6 +3,7 @@ pipeline {
     //agent none
      agent {
          label 'label-linux'
+	 customWorkspace '/home/jenkins/workspace/ProyectosDemo'
     }
     stages {
         stage('Build') {
