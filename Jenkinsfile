@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Compilando el proyecto...'
+                echo 'Compilando el proyecto......'
 		echo '########################################################################## (*-*)##############################################################'
 	        sh 'node --version'
                 // Aquí van los comandos para compilar tu proyecto
