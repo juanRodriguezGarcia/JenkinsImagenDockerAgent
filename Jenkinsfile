@@ -1,17 +1,19 @@
 pipeline {
     //None es cuando se quiere que compile con el nodo principal	
-    agent any
-
+   // agent any
+		agent {
+		   node {
+		        label 'label-linuxl'
+		        customWorkspace '/home/jenkins/workspace/ProyectosDemo'
+		    }
+    		}
 
 
 
 
     stages {
         stage('Build') {
-		agent {
-		        label 'label-linux'
-		        customWorkspace '/home/jenkins/workspace/ProyectosDemo'
-    		}
+
             steps {
                 echo 'Compilando el proyecto......'
 		echo '########################################################################## (*-*)##############################################################'
