@@ -5,7 +5,7 @@ pipeline {
 		agent {
 		   node {
 		        label 'label-linux'
-		        customWorkspace 'C:\\Jenkins\\directorioAgentes'
+		        customWorkspace 'workspace/ProyectosDemo'
 			   
 		    }
     		}
