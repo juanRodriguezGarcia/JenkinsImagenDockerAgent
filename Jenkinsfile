@@ -1,10 +1,12 @@
 pipeline {
     //None es cuando se quiere que compile con el nodo principal	
    // agent any
+	///home/jenkins/workspace/ProyectosDemo
 		agent {
 		   node {
 		        label 'label-linux'
-		        customWorkspace '/home/jenkins/workspace/ProyectosDemo'
+		        customWorkspace 'C:\Jenkins\directorioAgentes'
+			   
 		    }
     		}
 
