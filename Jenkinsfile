@@ -1,8 +1,9 @@
 pipeline {
-    agent label-linux
-    // agent {
-    //     label 'label-linux'
-    // }
+    //None es cuando se quiere que compile con el nodo principal	
+    //agent none
+     agent {
+         label 'label-linux'
+    }
     stages {
         stage('Build') {
             steps {
