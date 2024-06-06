@@ -2,39 +2,45 @@ pipeline {
     //None es cuando se quiere que compile con el nodo principal	
    // agent any
 	///home/jenkins/workspace/ProyectosDemo
-		agent {
-		   node {
-		        label 'label-linux'
-		
-			   
-		    }
-    		}
 
+
+// 	agent {
+//         node {
+// 	        label 'label-linux'
+// 	        customWorkspace 'workspace/ProyectosDemo'
+
+// 	     }
+//    }
+
+
+	agent {
+		        label 'label-linux'
+       }
 
 
 
     stages {
 
-        stage('Prepare Workspace') {
-            steps {
-                script {
-                    def workspaceDir = "/home/jenkins/agent/workspace/ProyectosDemo"
-                    sh """
-                        if [ ! -d "$workspaceDir" ]; then
-                            mkdir -p "$workspaceDir"
-                        fi
-                        sudo chown -R jenkins:jenkins "$workspaceDir"
-                        sudo chmod -R 755 "$workspaceDir"
-                    """
-                }
-            }
-        }
+    //     stage('Prepare Workspace') {
+    //         steps {
+    //             script {
+    //                 def workspaceDir = "/home/jenkins/agent/workspace/ProyectosDemo"
+    //                 sh """
+    //                     if [ ! -d "$workspaceDir" ]; then
+    //                         mkdir -p "$workspaceDir"
+    //                     fi
+    //                     sudo chown -R jenkins:jenkins "$workspaceDir"
+    //                     sudo chmod -R 755 "$workspaceDir"
+    //                 """
+    //             }
+    //         }
+    //     }
 
-	stage('Checkout Code') {
-            steps {
-                git url: 'https://github.com/tu-repositorio.git', branch: 'main'
-            }
-        }
+	// stage('Checkout Code') {
+    //         steps {
+    //             git url: 'https://github.com/tu-repositorio.git', branch: 'main'
+    //         }
+    //     }
 	    
         stage('Build') {
 
